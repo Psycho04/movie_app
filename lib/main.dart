@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/feature/auth/auth_screen.dart';
+import 'package:movie_app/feature/home/home_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'M O V I E S',
-      home: AuthScreen(),
+      home: HomeScreen(),
     );
   }
 }

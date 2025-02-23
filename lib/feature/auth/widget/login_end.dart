@@ -1,0 +1,85 @@
+import 'package:flutter/material.dart';
+import 'package:movie_app/core/my_colors.dart';
+import 'package:movie_app/core/my_images.dart';
+import 'package:movie_app/core/my_styles.dart';
+import 'package:movie_app/core/my_text.dart';
+import 'package:movie_app/core/spacing.dart';
+import 'package:movie_app/feature/auth/widget/my_text_btns.dart';
+import 'package:movie_app/feature/auth/widget/social_btn.dart';
+
+class LoginEnd extends StatefulWidget {
+  const LoginEnd({super.key});
+
+  @override
+  State<LoginEnd> createState() => _AuthEndState();
+}
+
+class _AuthEndState extends State<LoginEnd> {
+  bool isChecked = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Checkbox(
+              activeColor: MyColors.btnColor,
+              value: isChecked,
+              onChanged: (value) {
+                setState(() {
+                  isChecked = value!;
+                });
+              },
+            ),
+            Text(
+              MyText.rememberMe,
+              style: MyStyles.title24White400.copyWith(fontSize: 12),
+            ),
+            const Spacer(),
+            MyTextBtn(
+                onTap: () {
+                 
+                },
+                text: MyText.login,
+                color: MyColors.btnColor,
+                textColor: Colors.white)
+          ],
+        ),
+        Center(
+          child: Text(
+            MyText.or,
+            style: MyStyles.title24White400.copyWith(fontSize: 12),
+          ),
+        ),
+        dSpace(),
+        vSpace(10),
+        const SocialBtn(
+            color: Color(0xff1877F2),
+            textColor: Colors.white,
+            imagePath: MyImages.facebookLogo),
+        vSpace(10),
+        const SocialBtn(
+            color: Colors.black,
+            textColor: Colors.white,
+            imagePath: MyImages.appleLogo),
+        vSpace(5),
+        dSpace(),
+        Center(
+          child: Text(
+            MyText.dontHaveAccount,
+            style: MyStyles.title24White400.copyWith(fontSize: 12),
+          ),
+        ),
+        vSpace(10),
+        MyTextBtn(
+          onTap: () {},
+          text: MyText.signupFor,
+          color: MyColors.btnColor,
+          textColor: Colors.white,
+          width: double.infinity,
+        ),
+      ],
+    );
+  }
+}
