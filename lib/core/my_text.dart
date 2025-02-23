@@ -13,7 +13,7 @@ class MyText {
   static const String apple = 'Continue with Apple';
   static const String google = 'Continue with Google';
   static const String dontHaveAccount = 'Dont have an account?';
-  static const String signupFor = 'Sign up for';
+  static const String signupFor = 'Sign up';
   static const String audioDesc = 'Audio Description';
   static const String investor = 'Investor Relations';
   static const String privacy = 'Privacy';

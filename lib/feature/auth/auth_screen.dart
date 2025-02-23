@@ -3,35 +3,44 @@ import 'package:movie_app/core/my_images.dart';
 import 'package:movie_app/core/my_styles.dart';
 import 'package:movie_app/core/my_text.dart';
 import 'package:movie_app/core/spacing.dart';
-import 'package:movie_app/feature/widget/text_field_with_name.dart';
+import 'package:movie_app/feature/auth/widget/my_text_btns.dart';
+import 'package:movie_app/feature/auth/widget/social_btn.dart';
+import 'package:movie_app/feature/auth/widget/text_field_with_name.dart';
 
-class AuthScreen extends StatelessWidget {
+class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
+
+  @override
+  State<AuthScreen> createState() => _AuthScreenState();
+}
+
+class _AuthScreenState extends State<AuthScreen> {
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff141412),
+      appBar: AppBar(
         backgroundColor: const Color(0xff141412),
-        appBar: AppBar(
-          backgroundColor: const Color(0xff141412),
-          title: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              children: [
-                const Text(
-                  MyText.mood,
-                  style: MyStyles.title13Redw700,
-                ),
-                Text(
-                  MyText.box,
-                  style: MyStyles.title24White700.copyWith(fontSize: 20),
-                ),
-              ],
-            ),
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            children: [
+              const Text(
+                MyText.mood,
+                style: MyStyles.title13Redw700,
+              ),
+              Text(
+                MyText.box,
+                style: MyStyles.title24White700.copyWith(fontSize: 20),
+              ),
+            ],
           ),
         ),
-        body: SingleChildScrollView(
-            child: Container(
+      ),
+      body: SingleChildScrollView(
+        child: Container(
           width: double.infinity,
           height: 670,
           decoration: BoxDecoration(
@@ -46,7 +55,7 @@ class AuthScreen extends StatelessWidget {
               Center(
                 child: Container(
                   width: 400,
-                  height: 580,
+                  height: 600,
                   decoration: BoxDecoration(
                     color: const Color(0xff141412),
                     borderRadius: BorderRadius.circular(40),
@@ -89,6 +98,76 @@ class AuthScreen extends StatelessWidget {
                           controller: TextEditingController(),
                           obscureText: true,
                         ),
+                        InkWell(
+                          onTap: () {},
+                          child: Text(
+                            MyText.forgotYourPass,
+                            style: MyStyles.title24White400.copyWith(
+                                fontSize: 12,
+                                decoration: TextDecoration.underline,
+                                decorationColor: Colors.white),
+                          ),
+                        ),
+                        vSpace(10),
+                        Row(
+                          children: [
+                            Checkbox(
+                              activeColor: Colors.red,
+                              value: isChecked,
+                              onChanged: (value) {
+                                setState(() {
+                                  isChecked = value!;
+                                });
+                              },
+                            ),
+                            Text(
+                              MyText.rememberMe,
+                              style: MyStyles.title24White400
+                                  .copyWith(fontSize: 12),
+                            ),
+                            const Spacer(),
+                            MyTextBtn(
+                                onTap: () {},
+                                text: MyText.login,
+                                color: Colors.red,
+                                textColor: Colors.white)
+                          ],
+                        ),
+                        Center(
+                          child: Text(
+                            MyText.or,
+                            style:
+                                MyStyles.title24White400.copyWith(fontSize: 12),
+                          ),
+                        ),
+                        dSpace(),
+                        vSpace(10),
+                        const SocialBtn(
+                            color: Color(0xff1877F2),
+                            textColor: Colors.white,
+                            imagePath: MyImages.facebookLogo),
+                        vSpace(10),
+                        const SocialBtn(
+                            color: Colors.black,
+                            textColor: Colors.white,
+                            imagePath: MyImages.appleLogo),
+                        vSpace(5),
+                        dSpace(),
+                        Center(
+                          child: Text(
+                            MyText.dontHaveAccount,
+                            style:
+                                MyStyles.title24White400.copyWith(fontSize: 12),
+                          ),
+                        ),
+                        vSpace(10),
+                        MyTextBtn(
+                          onTap: () {},
+                          text: MyText.signupFor,
+                          color: Colors.red,
+                          textColor: Colors.white,
+                          width: double.infinity,
+                        ),
                       ],
                     ),
                   ),
@@ -96,6 +175,8 @@ class AuthScreen extends StatelessWidget {
               )
             ],
           ),
-        )));
+        ),
+      ),
+    );
   }
 }
