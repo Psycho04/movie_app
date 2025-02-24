@@ -7,6 +7,7 @@ class MyTextBtn extends StatelessWidget {
   final Color color;
   final Color textColor;
   final double width;
+  final double height;
   final double radius;
 
   const MyTextBtn({
@@ -16,6 +17,7 @@ class MyTextBtn extends StatelessWidget {
     required this.color,
     required this.textColor,
     this.width = 80, 
+    this.height = 35, 
     required this.radius,
   });
 
@@ -25,7 +27,7 @@ class MyTextBtn extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: width,
-        height: 35,
+        height: height,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(radius),

@@ -61,6 +61,7 @@ class MyText {
   static const String meetOthers = 'Meet Others With Same Taste';
   static const String c2025 = '© 2025 Mood box, Inc.';
   static const String friends = 'Friends';
+  static const String watched = 'Watched';
   static const String filters = 'Filters';
   static const String genres = 'Genres';
   static const String titleType = 'Title type';
@@ -90,7 +91,7 @@ class MyText {
   static const String batmanBegins = 'Batman Begins';
   static const String horror = 'Horror';
   static const String findFriends = 'Find Friends';
-  static const String patrickBateman = 'Patrick Bateman';
+  static const String patrickBatman = 'Patrick Batman';
   static const String add = 'Add';
   static const String myFriends = 'My Friends';
   static const String profile = 'Profile';

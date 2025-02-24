@@ -12,10 +12,11 @@ class FilmPoster extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 200,
-          height: 300,
-          padding: const EdgeInsets.only(top: 255),
+          width: 220,
+          height: 320,
+          padding: const EdgeInsets.only(top: 250),
           decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
               image: AssetImage(imagePath),
               fit: BoxFit.cover,
