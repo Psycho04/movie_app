@@ -43,7 +43,7 @@ class _AuthEndState extends State<LoginEnd> {
                 },
                 text: MyText.login,
                 color: MyColors.btnColor,
-                textColor: Colors.white)
+                textColor: Colors.white, radius: 20,)
           ],
         ),
         Center(
@@ -57,12 +57,12 @@ class _AuthEndState extends State<LoginEnd> {
         const SocialBtn(
             color: Color(0xff1877F2),
             textColor: Colors.white,
-            imagePath: MyImages.facebookLogo),
+            imagePath: MyImages.facebookLogo, radius: 20, width: double.infinity, text: MyText.facebook,),
         vSpace(10),
         const SocialBtn(
             color: Colors.black,
             textColor: Colors.white,
-            imagePath: MyImages.appleLogo),
+            imagePath: MyImages.appleLogo, radius: 20, width: double.infinity, text: MyText.facebook,),
         vSpace(5),
         dSpace(),
         Center(
@@ -77,7 +77,7 @@ class _AuthEndState extends State<LoginEnd> {
           text: MyText.signupFor,
           color: MyColors.btnColor,
           textColor: Colors.white,
-          width: double.infinity,
+          width: double.infinity, radius: 20,
         ),
       ],
     );
