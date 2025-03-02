@@ -15,75 +15,84 @@ class MyFriendsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: MyColors.primaryColor,
       appBar: const MovieAppBar(),
-      body: Column(
-        children: [
-          vSpace(50),
-          Center(
-            child: Text(
-              MyText.myFriends,
-              style: MyStyles.title24White700.copyWith(fontSize: 28),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            vSpace(50),
+            Center(
+              child: Text(
+                MyText.myFriends,
+                style: MyStyles.title24White700.copyWith(fontSize: 28),
+              ),
             ),
-          ),
-          vSpace(50),
-          Container(
-              margin: const EdgeInsets.symmetric(horizontal: 30),
-              width: double.infinity,
-              height: 1200,
-              decoration: BoxDecoration(
-                  color: MyColors.secondaryColor,
-                  borderRadius: BorderRadius.circular(30)),
-              child: GridView.builder(
-                itemCount: 18,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3),
-                itemBuilder: (context, index) {
-                  return Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(MyImages.myFriends),
-                      hSpace(10),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 25),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              MyText.patrickBatman,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 15),
-                            ),
-                            vSpace(10),
-                            Row(
-                              children: [
-                                const Text('${MyText.friends} : ${54}',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15)),
-                                hSpace(20),
-                                const Text('${MyText.watched} : ${176}',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 15)),
-                              ],
-                            ),
-                            vSpace(10),
-                            MyTextBtn(
-                              onTap: () {},
-                              text: MyText.add,
-                              color: Colors.blue,
-                              textColor: Colors.white,
-                              radius: 20,
-                              width: 60,
-                              height: 20,
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              )),
-          vSpace(50),
-        ],
+            vSpace(50),
+            Container(
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                width: double.infinity,
+                height: 1250,
+                decoration: BoxDecoration(
+                    color: MyColors.secondaryColor,
+                    borderRadius: BorderRadius.circular(30)),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 18,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            childAspectRatio: 0.90,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                            mainAxisExtent: 200,
+                            crossAxisCount: 3),
+                    itemBuilder: (context, index) {
+                      return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Image.asset(MyImages.myFriends),
+                              hSpace(20),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    MyText.patrickBatman,
+                                    style: MyStyles.title24White400,
+                                  ),
+                                  vSpace(20),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        '${MyText.friends} :54',
+                                        style: MyStyles.title24White400
+                                            .copyWith(fontSize: 16),
+                                      ),
+                                      hSpace(20),
+                                      Text(
+                                        '${MyText.watched} :187',
+                                        style: MyStyles.title24White400
+                                            .copyWith(fontSize: 16),
+                                      ),
+                                    ],
+                                  ),
+                                  vSpace(20),
+                                  MyTextBtn(
+                                      onTap: () {},
+                                      text: MyText.add,
+                                      color: Colors.blue,
+                                      textColor: Colors.white,
+                                      radius: 20)
+                                ],
+                              )
+                            ],
+                          ));
+                    },
+                  ),
+                )),
+            vSpace(50),
+          ],
+        ),
       ),
     );
   }
