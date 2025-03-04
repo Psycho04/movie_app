@@ -24,8 +24,8 @@ class MyListBody extends StatelessWidget {
           vSpace(50),
           Container(
               margin: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(vertical: 20),
               width: double.infinity,
-              height: 1200,
               decoration: BoxDecoration(
                   color: MyColors.secondaryColor,
                   borderRadius: BorderRadius.circular(30)),

@@ -19,7 +19,7 @@ class FilmInfo extends StatelessWidget {
       required this.imdbRating,
       required this.filmGenre1,
       required this.filmGenre2,
-      required this.filmGenre3});
+      this.filmGenre3=''});
 
   @override
   Widget build(BuildContext context) {

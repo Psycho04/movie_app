@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/feature/myFriends/my_friends_screen.dart';
+import 'package:movie_app/feature/profile/profile_screen.dart';
 
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'M O V I E S',
-      home: MyFriendsScreen(),
+      home: ProfileScreen(),
     );
   }
 }

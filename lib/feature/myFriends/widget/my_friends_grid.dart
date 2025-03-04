@@ -15,8 +15,6 @@ class MyFriendsGrid extends StatelessWidget {
       itemCount: 18,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 0.90,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
           mainAxisExtent: 200,
           crossAxisCount: 3),
       itemBuilder: (context, index) {

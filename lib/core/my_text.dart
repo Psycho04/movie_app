@@ -49,7 +49,7 @@ class MyText {
   static const String topActors = 'Top 10 Actors';
   static const String newRelease = 'New Release';
   static const String usa2018 = 'USA, 2018';
-  static const String spiderMan = 'Spider-Man : Into The\nSpider Verse';
+  static const String spiderMan = 'Spider-Man';
   static const String animation = 'Animation,';
   static const String action = 'Action,';
   static const String adventure = 'Adventure';

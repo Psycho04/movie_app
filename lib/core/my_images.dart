@@ -12,4 +12,5 @@ class MyImages {
   static const String gameOfThrons = 'assets/images/gameOfThrons.png';
   static const String profilePic = 'assets/images/profile.png';
   static const String myFriends = 'assets/images/avatar5.png';
+  static const String angryMen = 'assets/images/12AngryMan.png';
 }
